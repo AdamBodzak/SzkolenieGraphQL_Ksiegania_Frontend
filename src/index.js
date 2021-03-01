@@ -5,7 +5,7 @@ import { ApolloProvider } from "@apollo/client";
 
 import App from "./App";
 
-const GRAPHQL_ENDPOINT = "https://vast-ocean-54671.herokuapp.com/";
+const GRAPHQL_ENDPOINT = "https://examples.devmastery.pl/library-lists/graphql";
 
 const cache = new InMemoryCache({
   addTypename: false,
