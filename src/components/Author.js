@@ -1,10 +1,11 @@
+import { Flex, Heading, Image } from "@chakra-ui/react";
 import React from "react";
 
 export default function Author({author}) {
     return (
-        <>
-            <img src={author.photo.url} alt={author.name} />
-            <h2>{author.name}</h2>
-        </>
+        <Flex direction="column" align="center" m="3px" border="1px" borderColor="grey.200" borderRadius="md" overflow="hidden" bg="green.50">
+            <Image boxSize="200px" objectFit="cover" src={author.photo.url} alt={author.name} />
+            <Heading size="md" color="gray.700" my="3">{author.name}</Heading>
+        </Flex>
     )
 }

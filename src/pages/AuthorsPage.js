@@ -1,6 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import Author from "../components/Author";
+import { Flex } from "@chakra-ui/react";
 
 const ALL_AUTHORS_QUERY = gql`
     query GetAllAuthors {
@@ -21,5 +22,9 @@ export default function AuthorsPage() {
         return <p>Could not load authors...</p>;
     }
     const { authors } = data;
-    return authors.map(authors => <Author author={authors} />);
+    return(
+        <Flex wrap="wrap" justify="space-around">
+            {authors.map(authors => <Author author={authors} />)}
+        </Flex>
+    );
 }
