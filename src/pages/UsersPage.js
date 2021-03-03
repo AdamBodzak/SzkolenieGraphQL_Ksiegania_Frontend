@@ -1,7 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import User from "../components/User";
-import { Flex } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const ALL_USERS_QUERY = gql`
     query GetAllUsers {
@@ -26,8 +26,10 @@ export default function UsersPage() {
     }
     const { users } = data;
     return(
-        <Flex wrap="wrap" justify="space-around">
-            {users.map(user => <User user={user} />)}
-        </Flex>
+        <SimpleGrid columns="2">
+            {users.map(user => (
+            <User key={user.name} user={user} />
+            ))}
+        </SimpleGrid>
     );
 }
