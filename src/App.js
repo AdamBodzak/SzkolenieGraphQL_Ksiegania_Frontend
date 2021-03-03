@@ -3,6 +3,7 @@ import AuthorsPage from "./pages/AuthorsPage";
 import { Box, Divider, Flex, Heading, Link } from "@chakra-ui/react";
 import { Routes, Route, Link as RouterrLink } from "react-router-dom";
 import UsersPage from "./pages/UsersPage";
+import BooksPage from "./pages/BooksPage";
 
 export default function App() {
   return (
@@ -12,6 +13,10 @@ export default function App() {
           <Heading as="h1">Personal Library</Heading>
         </Link>
         <Flex>
+        <Link to="books/" as={RouterrLink}>
+            <Box as="span">Books</Box>
+          </Link>
+          <Divider orientation="vertical" />
           <Link to="/" as={RouterrLink}>
             <Box as="span">Authors</Box>
           </Link>
@@ -24,6 +29,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<AuthorsPage />} />
         <Route path="/users" element={<UsersPage />} />
+        <Route path="/books" element={<BooksPage />} />
       </Routes>
     </Flex>
   );
