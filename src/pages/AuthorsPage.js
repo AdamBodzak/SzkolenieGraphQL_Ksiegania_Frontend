@@ -24,7 +24,9 @@ export default function AuthorsPage() {
     const { authors } = data;
     return(
         <Flex wrap="wrap" justify="space-around">
-            {authors.map(authors => <Author author={authors} />)}
-        </Flex>
+        {authors.map(author => (
+          <Author key={author.name} author={author} />
+        ))}
+      </Flex>
     );
 }

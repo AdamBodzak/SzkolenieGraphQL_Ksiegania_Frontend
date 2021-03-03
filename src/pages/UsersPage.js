@@ -26,10 +26,10 @@ export default function UsersPage() {
     }
     const { users } = data;
     return(
-        <SimpleGrid columns="2">
-            {users.map(user => (
-            <User key={user.name} user={user} />
-            ))}
-        </SimpleGrid>
+        <SimpleGrid columns={[1, 2, 4]}>
+        {users.map(user => (
+          <User key={user.name} user={user} />
+        ))}
+      </SimpleGrid>
     );
 }

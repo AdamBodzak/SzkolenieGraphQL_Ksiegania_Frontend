@@ -8,8 +8,19 @@ import { Flex, Box, Divider, Heading, Link } from "@chakra-ui/react";
 
 export default function App() {
   return (
-    <Flex direction="column" align="center" width="75%" mx="auto">
-      <Flex align="center" justifyContent="space-between" w="100%" mx="5">
+    <Flex
+      direction="column"
+      align="center"
+      width={["100%", "75%", "60%"]}
+      mx="auto"
+    >
+      <Flex
+        direction={["column", null, "row"]}
+        align="center"
+        justifyContent="space-between"
+        w="100%"
+        mx="5"
+      >
         <Link to="/" as={RouterLink}>
           <Heading as="h1">Personal Library</Heading>
         </Link>
